@@ -1,13 +1,13 @@
 <%= form_for @post do |f| %>
   <% if @post.errors.any? %>
     <div id="errors">
-      <h2><%= pluralize(@post.errors.count, "error") %> prevent this post from saving:</h2>
+      <h2><%= pluralize(@post.errors.count, "error") %> prevented this post from saving:</h2>
       <ul>
-        <%= @post.errors.full_messages.each do |msg| %>
+        <% @post.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
-      <ul>
-    </ul>
+      </ul>
+    </div>
   <% end %>
 
   <%= f.label :title %><br>
